@@ -57,7 +57,7 @@ namespace BugTracker.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            //ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -185,7 +185,7 @@ namespace BugTracker.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
-        //
+        [Authorize]
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
         public ActionResult ForgotPassword()
@@ -193,7 +193,7 @@ namespace BugTracker.Controllers
             return View();
         }
 
-        //
+        [Authorize]
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
@@ -221,7 +221,7 @@ namespace BugTracker.Controllers
             return View(model);
         }
 
-        //
+        [Authorize]
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
@@ -229,7 +229,7 @@ namespace BugTracker.Controllers
             return View();
         }
 
-        //
+        [Authorize]
         // GET: /Account/ResetPassword
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
@@ -237,7 +237,7 @@ namespace BugTracker.Controllers
             return code == null ? View("Error") : View();
         }
 
-        //
+        [Authorize]
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
@@ -263,7 +263,7 @@ namespace BugTracker.Controllers
             return View();
         }
 
-        //
+        [Authorize]
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()

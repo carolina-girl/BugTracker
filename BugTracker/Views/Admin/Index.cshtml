@@ -1,0 +1,19 @@
+﻿@model IEnumerable<BugTracker.Models.ApplicationUser>
+
+
+
+
+<h2>User List</h2>
+
+@foreach (var item in Model)
+{
+
+    <p>
+        @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+    </p>
+
+    <p>
+        @Html.ActionLink("Assign User Roles", "EditUser", "Admin", new { id = item.Id }, null)  |
+        @Html.ActionLink("Assign Users to Projects", "ProjectUser", "Admin", new { id = item.Id }, null)
+   </p>
+}

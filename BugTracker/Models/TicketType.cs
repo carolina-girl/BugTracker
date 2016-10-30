@@ -7,5 +7,8 @@ namespace BugTracker.Models
 {
     public class TicketType
     {
+        public int Id { get; set; }
+        public int TicketId { get; set; }
+        public string Type { get; set; }
     }
 }
